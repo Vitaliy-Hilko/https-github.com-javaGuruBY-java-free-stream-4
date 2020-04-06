@@ -1,0 +1,16 @@
+package HumanDemo;
+
+public class HumanDemo {
+    public static void main(String[] args) {
+        System.out.println("------------------------------------------------------------------------------");
+        Human man1 = new Human("Vasya",22);
+        man1.greet();
+        System.out.println("------------------------------------------------------------------------------");
+        Human man2 = new Human("Olga",45);
+        man2.greet();
+        System.out.println("------------------------------------------------------------------------------");
+        Human man3 = new Human("Natasha",13);
+        man3.greet();
+        System.out.println("------------------------------------------------------------------------------");
+    }
+}
