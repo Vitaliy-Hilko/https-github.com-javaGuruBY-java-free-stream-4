@@ -1,4 +1,5 @@
-package DogDemo;
+package bean;
+
 
 public class Dog {
 
@@ -6,7 +7,7 @@ public class Dog {
     private String color;
     private int age;
 
-    Dog(String name, String color, int age){
+    public Dog(String name, String color, int age){
         this.name = name;
         this.color = color;
         this.age = age;

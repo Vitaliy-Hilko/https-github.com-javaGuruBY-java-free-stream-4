@@ -1,30 +1,28 @@
-package DogDemo;
-
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import bean.Dog;
+import service.ServiceDog;
 
 public class DogDemo {
     public static void main(String[] args) {
         System.out.println("---------------------------------------------------");
-        Dog dog1 = new Dog("Шарик","Серый",3);
-        System.out.println("Моя кличка : "+ dog1.getName());
-        System.out.println("Мой возраст : "+ dog1.getAge());
-        System.out.println("Мой окрас : "+ dog1.getDogColor());
+        Dog dog1 = new Dog("Шарик", "Серый", 3);
+        ServiceDog service = new ServiceDog();
+        service.gret(dog1);
         dog1.voice();
         dog1.eat();
         dog1.voice();
         dog1.sleep();
         System.out.println("---------------------------------------------------");
-        Dog dog2 = new Dog("Рекс","Рыжий",4);
-        System.out.println("Моя кличка : "+ dog2.getName());
-        System.out.println("Мой возраст : "+ dog2.getAge());
-        System.out.println("Мой окрас : "+ dog2.getDogColor());
+        Dog dog2 = new Dog("Рекс", "Рыжий", 4);
+        ServiceDog service2 = new ServiceDog();
+        service2.gret(dog2);
         dog2.voice();
         dog2.eat();
         dog2.voice();
         dog2.sleep();
         System.out.println("---------------------------------------------------");
-        Dog dog3 = new Dog("Шарик","Белый",7);
-        System.out.println("Моя кличка : "+ dog3.getName());
-        System.out.println("Мой возраст : "+ dog3.getAge());
-        System.out.println("Мой окрас : "+ dog3.getDogColor());
-   
+        Dog dog3 = new Dog("Шарик", "Белый", 7);
+        ServiceDog service3 = new ServiceDog();
+        service3.gret(dog3);
+
+    }
+}
