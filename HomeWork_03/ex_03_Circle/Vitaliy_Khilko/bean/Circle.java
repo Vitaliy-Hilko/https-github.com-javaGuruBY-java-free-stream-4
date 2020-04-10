@@ -1,21 +1,21 @@
-package CircleDemo;
+package bean;
 
 public class Circle {
     final double PI = 3.1415;
-    public int radius;
+    public double radius;
 
 
-    Circle(int radius){
+    public Circle(double radius){
         this.radius = radius;
     }
 
-    /* public void setRadius(int radius){
+     public void setRadius(double radius){
         this.radius = radius;
     }
 
-    public int getRadius(){
-        System.out.println(this.radius);
-    }  */
+    public double getRadius(){
+        return radius;
+    }
 
     public void calculateArea(int radius){
         double SSS = PI * this.radius;
