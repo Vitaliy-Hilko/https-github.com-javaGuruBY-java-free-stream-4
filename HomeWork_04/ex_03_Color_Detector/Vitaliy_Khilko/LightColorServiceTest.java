@@ -1,6 +1,9 @@
-public class LightColorDetectorTest {
+import service.LightColorService;
+import bean.LightColorDetector;
+
+public class LightColorServiceTest {
     public static void main(String[] args) {
-        LightColorDetectorTest num = new LightColorDetectorTest();
+        LightColorServiceTest num = new LightColorServiceTest();
         num.testNumberOne();
         num.testNumberTwo();
         num.testNumberThree();
@@ -9,38 +12,46 @@ public class LightColorDetectorTest {
 
     public void testNumberOne(){
         LightColorDetector number = new LightColorDetector();
+        LightColorService service = new LightColorService();
+
         String test = "Violet";
         String expectedResult = "Violet";
-        String actualResult = number.detect(number.getColor());
+        String actualResult = service.detect(number.getColor());
         checkThatEqual(expectedResult, actualResult, test);
     }
 
 
     public void testNumberTwo(){
         LightColorDetector number = new LightColorDetector();
+        LightColorService service = new LightColorService();
+
         number.setColor(475);
         String test = "Blue";
         String expectedResult = "Blue";
-        String actualResult = number.detect(number.getColor());
+        String actualResult = service.detect(number.getColor());
         checkThatEqual(expectedResult, actualResult, test);
     }
 
 
     public void testNumberThree(){
         LightColorDetector number = new LightColorDetector();
-        number.setColor(590);
+        LightColorService service = new LightColorService();
+
+        number.setColor(77);
         String test = "Orange";
         String expectedResult = "Orange";
-        String actualResult = number.detect(number.getColor());
+        String actualResult = service.detect(number.getColor());
         checkThatEqual(expectedResult, actualResult, test);
     }
 
     public void testNumberFour(){
         LightColorDetector number = new LightColorDetector();
-        number.setColor(-900);
+        LightColorService service = new LightColorService();
+
+        number.setColor(-9);
         String test = "Invisible Light";
         String expectedResult = "Invisible Light";
-        String actualResult = number.detect(number.getColor());
+        String actualResult = service.detect(number.getColor());
         checkThatEqual(expectedResult, actualResult, test);
     }
 
@@ -53,3 +64,4 @@ public class LightColorDetectorTest {
         }
     }
 }
+
