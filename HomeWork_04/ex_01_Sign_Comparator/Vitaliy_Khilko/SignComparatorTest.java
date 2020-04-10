@@ -1,19 +1,49 @@
+import bean.SignComparator;
+import service.SignComparatorService;
+
 public class SignComparatorTest {
     public static void main(String[] args) {
-        SignComparatorTest testRunner = new SignComparatorTest();
-        testRunner.testNumberOne();
-        testRunner.testNumberTwo();
-        testRunner.testNumberThree();
+        SignComparatorTest serv = new SignComparatorTest();
+
+        serv.testNumberOne();
+        serv.testNumberTwo();
+        serv.testNumberThree();
     }
 
     public void testNumberOne() {
-        SignComparator testOne = new SignComparator();
 
-        int number = 24;
+        SignComparator testOne = new SignComparator();
+        SignComparatorService service = new SignComparatorService();
+
+        int number = service.getSignComparatorRandom(testOne);
         String text = "Number is positive";
         String expectedResult = "Number is positive";
         String actualResult = testOne.getSign(number);
         checkThatEqual(expectedResult, actualResult, text);
+    }
+
+
+    public void testNumberTwo() {
+        SignComparator testTwo = new SignComparator();
+        SignComparatorService service = new SignComparatorService();
+
+        int number = service.getSignComparatorRandom(testTwo);
+        String textTwo = "Number is negative";
+        String expectedResult = "Number is negative";
+        String actualResult = testTwo.getSign(number);
+        checkThatEqual(expectedResult, actualResult, textTwo);
+    }
+
+
+    public void testNumberThree() {
+        SignComparator testThree = new SignComparator();
+        SignComparatorService service = new SignComparatorService();
+
+        int number = service.getSignComparatorRandom(testThree);
+        String textThree = "Number is equal to zero";
+        String expectedResult = "Number is equal to zero";
+        String actualResult = testThree.getSign(number);
+        checkThatEqual(expectedResult, actualResult, textThree);
     }
 
     public void checkThatEqual(String expected, String actual, String text) {
@@ -24,28 +54,5 @@ public class SignComparatorTest {
             System.out.println("Expected '" + expected + "' but was '" + actual + "'");
         }
     }
-
-    public void testNumberTwo() {
-        SignComparator testTwo = new SignComparator();
-
-        int number = -12;
-        String textTwo = "Number is negative";
-        String expectedResult = "Number is negative";
-        String actualResult = testTwo.getSign(number);
-        checkThatEqual(expectedResult, actualResult, textTwo);
-    }
-
-
-    public void testNumberThree() {
-        SignComparator testThree = new SignComparator();
-
-        int number = 0;
-        String textThree = "Number is equal to zero";
-        String expectedResult = "Number is equal to zero";
-        String actualResult = testThree.getSign(number);
-        checkThatEqual(expectedResult, actualResult, textThree);
-    }
-
-
 
 }
