@@ -1,16 +1,20 @@
-package HumanDemo;
+import bean.Human;
+import service.ServiceHuman;
 
 public class HumanDemo {
     public static void main(String[] args) {
         System.out.println("------------------------------------------------------------------------------");
         Human man1 = new Human("Vasya",22);
-        man1.greet();
+        ServiceHuman service = new ServiceHuman();
+        service.greet(man1);
         System.out.println("------------------------------------------------------------------------------");
         Human man2 = new Human("Olga",45);
-        man2.greet();
+        ServiceHuman service2 = new ServiceHuman();
+        service2.greet(man2);
         System.out.println("------------------------------------------------------------------------------");
         Human man3 = new Human("Natasha",13);
-        man3.greet();
+        ServiceHuman service3 = new ServiceHuman();
+        service3.greet(man3);
         System.out.println("------------------------------------------------------------------------------");
     }
 }
