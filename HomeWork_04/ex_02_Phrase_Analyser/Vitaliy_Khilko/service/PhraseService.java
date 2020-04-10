@@ -1,22 +1,7 @@
+package service;
+import bean.PhraseAnalyser;
 
-public class PhraseAnalyser {
-    private String texts;
-
-    PhraseAnalyser(){
-        this.texts = "Make homework and get a good grade great again";
-    }
-
-    PhraseAnalyser(String texts){
-        this.texts = texts;
-    }
-
-    void setPhraseAnalyser(String text){
-        this.texts = text;
-    }
-
-    String getPhraseAnalyser(){
-        return texts;
-    }
+public class PhraseService {
 
     public String analyses(String text) {
         System.out.println("Text : " + text);
