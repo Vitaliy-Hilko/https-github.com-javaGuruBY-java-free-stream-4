@@ -1,3 +1,6 @@
+package UserTest;
+import bean.User;
+
 public class UserTest {
     public static void main(String[] args) {
         UserTest name = new UserTest();
@@ -6,9 +9,9 @@ public class UserTest {
         name.correctPassword();
         name.logAndPassEmpty();
     }
-    
-    
-    public void incorrectLoginAndPassword(){
+
+
+    public void incorrectLoginAndPassword() {
         String testDescription = "Login and password do not match";
 
         User name2 = new User("qwerty", "666666");
@@ -16,9 +19,9 @@ public class UserTest {
         boolean actualResult = (name2.getUser()).equals(name2.getPassword());
         checkThatEqual(expectedResult, actualResult, testDescription);
     }
-    
-    
-    public void correctLogin(){
+
+
+    public void correctLogin() {
         String testDescription = "Login incorrect";
 
         User name2 = new User("", "666666");
@@ -26,9 +29,9 @@ public class UserTest {
         boolean actualResult = (name2.getUser()).equals(name2.getPassword());
         checkThatEqual(expectedResult, actualResult, testDescription);
     }
-    
-    
-    public void correctPassword(){
+
+
+    public void correctPassword() {
         String testDescription = "Password incorrect";
 
         User name2 = new User("qwerty", "");
@@ -36,9 +39,9 @@ public class UserTest {
         boolean actualResult = (name2.getUser()).equals(name2.getPassword());
         checkThatEqual(expectedResult, actualResult, testDescription);
     }
-    
-    
-    public void logAndPassEmpty(){
+
+
+    public void logAndPassEmpty() {
         String testDescription = "Log and pass incorrect";
 
         User name2 = new User("", "");
@@ -57,3 +60,4 @@ public class UserTest {
         }
 
     }
+}

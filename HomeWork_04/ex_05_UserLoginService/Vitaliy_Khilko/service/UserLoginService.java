@@ -1,6 +1,9 @@
+package service;
+import bean.User;
+
 public class UserLoginService {
     public boolean login(User user, String password) {
-        int tries = user.getCountOfTries();
+        int attempt = user.getAttempt();
 
         if (user.UserIsBlocked()) {
             System.out.println("User is blocked");
@@ -10,13 +13,13 @@ public class UserLoginService {
 
         boolean isPassCorr = user.getPassword().equals(password);
         if (isPassCorr) {
-            user.resetEnterTries();
+            user.resetAttempt();
         } else {
-            tries = tries - 1;
-            user.setCountOfTries(tries);
+            attempt = attempt - 1;
+            user.setAttempt(attempt);
         }
 
-        if (tries == 0) {
+        if (attempt == 0) {
             user.setUserIsBlocked(true);
         }
 

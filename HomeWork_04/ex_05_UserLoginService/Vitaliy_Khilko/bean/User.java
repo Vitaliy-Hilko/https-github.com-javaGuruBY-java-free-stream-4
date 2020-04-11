@@ -1,8 +1,10 @@
+package bean;
+
 public class User {
     public String user;
     public String password;
     public boolean UserIsBlocked = false;
-    public int countOfTries=3;
+    public int attempt=3;
 
     public User(String login, String password) {
         this.user = login;
@@ -32,20 +34,21 @@ public class User {
         this.UserIsBlocked = userIsBlocked;
     }
 
-    public int getCountOfTries() {
-        return countOfTries;
+    public int getAttempt() {
+        return attempt;
     }
 
-    public void setCountOfTries(int countOfTries) {
-        this.countOfTries = countOfTries;
+    public void setAttempt(int attempt) {
+        this.attempt = attempt;
     }
 
 
-    public void resetEnterTries (){
-        countOfTries = 3;
+    public void resetAttempt (){
+        attempt = 3;
 
     }
     public void blockUser() {
         UserIsBlocked = true;
     }
 }
+
